@@ -13,9 +13,9 @@ class Mario():
         self.velocidade = velocidade
         self.direcao = VERTICAL # 0 - vertical, 1 - horizontal
         self.sentido = FRENTE  # 0 - esquerda, 1 - direita
-        self.carro_path = mario_path
+        self.pulo = False #pois é uma variavel bolean
+        self.mario_path = mario_path
 
-        #print("Meu carrão está sendo criado")
 
     def setPosition(self, position=(0,0)):
         self.position = position
@@ -49,3 +49,11 @@ class Mario():
 
     def getImagem(self):
         return self.mario_path
+
+    def pular(self):
+        self.pulo = True
+
+
+    def update(self):
+        if self.pulo == True:
+            self.rect.y -= 20

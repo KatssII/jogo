@@ -58,6 +58,9 @@ while janela_aberta:
         x -= velocidade
     if comandos[pygame.K_RIGHT]:
         x += velocidade
+    if event.type == KEY_DOWN:
+         if event.key == K_SPACE:
+                mario.pular()
 
     janela.blit(fundo,(0,0))
     janela.blit(mario,(x,y))
